@@ -4,7 +4,7 @@ import pokemon from "../../assets/pokemon.svg";
 import PokeCard from "../../components/pokecard/PokeCard";
 import PokeInfo from "../../components/pokeinfo/PokeInfo";
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const PokemonList = () => {
   const [pokeData, setPokeData] = useState([]);
@@ -24,17 +24,17 @@ const PokemonList = () => {
   };
 
   const getPokemon = async (res) => {
-    res.map(async (item) => {
+    const pokemonPromises = res.map(async (item) => {
       const result = await axios.get(item.url);
-      setPokeData((state) => {
-        state = [...state, result.data];
-        state.sort((a, b) => (a.id > b.id ? 1 : -1));
-        return state;
-      });
+      return result.data;
     });
+  
+    const pokemonData = await Promise.all(pokemonPromises);
+    setPokeData(pokemonData);
   };
-  console.log(pokeData);
-  useState(() => {
+  
+
+  useEffect(() => {
     pokeFun();
   }, [url]);
 

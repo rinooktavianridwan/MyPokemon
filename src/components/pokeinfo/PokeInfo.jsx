@@ -19,7 +19,7 @@ const PokeInfo = ({ data }) => {
               </div>
               <div className="rigth">
                 <div className="abilities">
-                  {data.abilities.map((poke, index) => {
+                  {data.abilities.map((poke) => {
                     return (
                       <>
                         <div className="group">
