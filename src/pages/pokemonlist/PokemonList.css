@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
 * {
     padding: 0;
     margin: 0;
@@ -23,6 +24,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    font-family: "Paytone One", sans-serif;
   }
 
   .header-container .header-name h1{
@@ -46,4 +48,37 @@
   
   .header-container .search-box-pokemon button {
     height: 30px;
+  }
+
+  .poke-container{
+    width: 90%;
+    margin: auto;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .poke-list{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    
+
+  }
+
+  .btn-group{
+    display: flex;
+
+  }
+
+  .btn-group button{
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: #41403d;
+    color: white;
+    border: none;
+    cursor: pointer;
   }

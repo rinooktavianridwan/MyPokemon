@@ -1,0 +1,60 @@
+.info-container{
+    padding: 20px;
+    width: 700px;
+    height: 400px;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.info-container img{
+    width: 170px;
+}
+
+.detail{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+}
+
+.detail .rigth{
+    width: 100%;
+
+}
+.detail .left{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+.info-name{
+    background-color: blue;
+    width: 80%;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.abilities{
+    width: 80%;
+    margin : auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.abilities .group{
+    background-color: blue;
+    color: white;
+    padding: 0.5rem;
+    font-size: 12px;
+    border-radius: 8px;
+
+}
+
+.base-state{
+    margin-top: 20px;
+}
