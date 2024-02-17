@@ -126,7 +126,7 @@ const PokemonList = () => {
         )}
         {showPopup && (
         <div className="popup">
-          <p>Successfully added to the Favorite!</p>
+          <p>Successfully added to the Favorite in My Pokemon Page</p>
           <button onClick={closePopup}>Close</button>
         </div>
       )}

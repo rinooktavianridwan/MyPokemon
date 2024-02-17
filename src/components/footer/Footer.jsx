@@ -1,9 +1,12 @@
 import React from 'react'
+import "./Footer.css";
 
-const Footer = () => {
+export default function Footer() {
   return (
-    <div>Footer</div>
+    <div className='footer-container'>
+      <img src="/pokemon_ball.svg" alt="My List" className=""/>
+      <h4>© 2024. All rights reserved.
+</h4>
+    </div>
   )
 }
-
-export default Footer
