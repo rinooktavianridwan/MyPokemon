@@ -14,7 +14,7 @@ const PokeCard = ({ pokemon, loading, infoPokemon }) => {
             onClick={() => infoPokemon(index)}
           > 
             <img src={index.sprites.other.dream_world.front_default} alt="" />
-            <h2>{index.id}{index.name}</h2>
+            <h2>{index.name}</h2>
           </div>
         ))
       )}

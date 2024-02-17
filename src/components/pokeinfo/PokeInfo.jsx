@@ -8,7 +8,6 @@ const PokeInfo = ({ data }) => {
         ""
       ) : (
         <>
-          <div className="info-container">
             <h1 className="info-name">{data.name}</h1>
             <div className="detail">
               <div className="left">
@@ -40,7 +39,6 @@ const PokeInfo = ({ data }) => {
                 </div>
               </div>
             </div>
-          </div>
         </>
       )}
     </>

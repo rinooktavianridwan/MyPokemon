@@ -1,0 +1,28 @@
+.mylist {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 0.5rem;
+    background-color: blue;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  .mylist:hover{
+    cursor: pointer;
+  }
+  
+  
+  @media screen and (max-width: 600px) {
+    .mylist {
+      bottom: 5px;
+      right: 5px;
+    }
+  }
+  
+  @media screen and (min-width: 600px) and (max-width: 1024px) {
+    .mylist {
+      bottom: 10px;
+      right: 10px;
+    }
+  }
+  
