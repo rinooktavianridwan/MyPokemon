@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./PokemonList.css";
 import pokemon from "../../assets/pokemon.svg";
 import PokeCard from "../../components/pokecard/PokeCard";
 import PokeInfo from "../../components/pokeinfo/PokeInfo";
 import axios from "axios";
 import { AddToFav } from "../../components/addtofav/AddToFav";
-import { useEffect, useState } from "react";
 
 const PokemonList = () => {
   const [pokeData, setPokeData] = useState([]);
@@ -17,6 +16,10 @@ const PokemonList = () => {
   const [myPokemon, setMyPokemon] = useState([]);
   const [isInfoVisible, setIsInfoVisible] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchResult, setSearchResult] = useState(null);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [showNotFoundPopup, setShowNotFoundPopup] = useState(false);
 
   const pokeFun = async () => {
     setLoading(true);
@@ -45,7 +48,7 @@ const PokemonList = () => {
     setIsInfoVisible(false);
   };
 
-  const aadTo = (pokemon) => {
+  const addToFavorites = (pokemon) => {
     const pokeExists = myPokemon.some((poke) => poke.id === pokemon.id);
     if (!pokeExists) {
       const newArrayPokemon = [...myPokemon, pokemon];
@@ -59,18 +62,52 @@ const PokemonList = () => {
     setShowPopup(false);
   };
 
+  const handleSearch = async () => {
+    if (!searchQuery.trim()) {
+      setSearchResult(null);
+      pokeFun();
+      return;
+    }
+  
+    try {
+      setLoading(true);
+      setErrorMessage(""); 
+      const res = await axios.get(
+        `https://pokeapi.co/api/v2/pokemon/${searchQuery.toLowerCase()}`
+      );
+      if (res.data) {
+        setSearchResult(res.data);
+      } else {
+        setSearchResult(null);
+        setErrorMessage("Pokemon tidak ditemukan");
+      }
+      setLoading(false);
+    } catch (error) {
+      if (error.response && error.response.status === 404) {
+        setErrorMessage("Pokemon tidak ditemukan");
+        setShowNotFoundPopup(true);
+      } else {
+        setErrorMessage("Terjadi kesalahan saat mencari Pokemon");
+      }
+      setLoading(false);
+    }
+  };
+  
+
+  const closeNotFoundPopup = () => {
+    setShowNotFoundPopup(false);
+  };
+
   useEffect(() => {
     const storedPokemon = localStorage.getItem("myPokemon");
     if (storedPokemon) {
       setMyPokemon(JSON.parse(storedPokemon));
     }
   }, []);
-  
-  console.log(myPokemon);
+
   useEffect(() => {
     pokeFun();
   }, [url]);
-
   return (
     <div>
       <div className="header-container">
@@ -80,14 +117,19 @@ const PokemonList = () => {
           <h1>List</h1>
         </div>
         <div className="search-box-pokemon">
-          <input type="search-pokemon" placeholder="Search for a pokemon" />
-          <button>Search</button>
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder="Search for a pokemon"
+          />
+          <button onClick={handleSearch}>Search</button>
         </div>
       </div>
       <div className="poke-container">
         <div className="poke-list">
           <PokeCard
-            pokemon={pokeData}
+            pokemon={searchResult ? [searchResult] : pokeData}
             loading={loading}
             infoPokemon={(poke) => {
               setPokeDex(poke);
@@ -103,7 +145,7 @@ const PokemonList = () => {
                 setUrl(prevUrl);
               }}
             >
-              Previus
+              Previous
             </button>
           )}
           {nextUrl && (
@@ -121,15 +163,21 @@ const PokemonList = () => {
           <div className="poke-info-popup">
             <PokeInfo data={pokeDex} />
             <button onClick={hideInfo}>Close</button>
-            <AddToFav handleAddToList={() => aadTo(pokeDex)} />
+            <AddToFav handleAddToList={() => addToFavorites(pokeDex)} />
           </div>
         )}
         {showPopup && (
-        <div className="popup">
-          <p>Successfully added to the Favorite in My Pokemon Page</p>
-          <button onClick={closePopup}>Close</button>
-        </div>
-      )}
+          <div className="popup">
+            <p>Successfully added to the Favorite in My Pokemon Page</p>
+            <button onClick={closePopup}>Close</button>
+          </div>
+        )}
+        {showNotFoundPopup && (
+          <div className="popup">
+            <p>{errorMessage}</p>
+            <button onClick={closeNotFoundPopup}>Tutup</button>
+          </div>
+        )}
       </div>
     </div>
   );
