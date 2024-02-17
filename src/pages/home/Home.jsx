@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import Preloader from "../../components/preloader/Preloader";
 
 const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <>
+    <Preloader />
+      <div>Home</div>
+    </>
+  );
+};
 
-export default Home
+export default Home;
