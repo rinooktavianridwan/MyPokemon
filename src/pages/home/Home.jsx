@@ -11,7 +11,7 @@ const Home = () => {
   }, []);
   return (
     <div className="home-container">
-      <div className="header-container">
+      <div className="header-container-home">
         <div className="header-name">
           <h1>My</h1>
           <img src={pokemon} alt="Pokemon" />
@@ -27,7 +27,7 @@ const Home = () => {
         </p>
       </div>
       <div className="website-home">
-        <div className="header-name">
+        <div className="header-des">
           <h1>My</h1>
           <img src={pokemon} alt="Pokemon" />
           <h1>Book</h1>
@@ -39,7 +39,7 @@ const Home = () => {
         </p>
       </div>
       <div className="website-home">
-        <div className="header-name">
+        <div className="header-des">
           <h1>My</h1>
           <img src={pokemon} alt="Pokemon" />
           <h1>List</h1>

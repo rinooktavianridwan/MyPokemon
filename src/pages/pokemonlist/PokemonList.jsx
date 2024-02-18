@@ -110,8 +110,8 @@ const PokemonList = () => {
     pokeFun();
   }, [url]);
   return (
-    <div>
-      <div className="header-container">
+    <>
+      <div className="header-container-list">
         <div className="header-name">
           <h1>My</h1>
           <img src={pokemon} alt="Pokemon" />
@@ -182,7 +182,7 @@ const PokemonList = () => {
           </div>
         )}
       </div>
-    </div>
+    </>
   );
 };
 

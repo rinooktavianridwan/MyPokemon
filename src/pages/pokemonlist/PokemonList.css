@@ -1,122 +1,175 @@
-@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Paytone+One&display=swap");
 * {
-    padding: 0;
-    margin: 0;
-  }
-  
-  body {
-    background-color: white;
-  }
-  
-  .header-container {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: white;
+}
+
+.header-container-list {
+  width: 100%;
+  padding-top: 50px;
+  height: 150px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #41403d;
+  color: white;
+  z-index: 1;
+}
+
+.header-container-list .header-name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: "Paytone One", sans-serif;
+}
+
+.header-container-list .header-name h1 {
+  color: rgb(255, 183, 0);
+  font-size: 50px;
+}
+
+.header-container-list .header-name img {
+  width: 150px;
+}
+
+.header-container-list .search-box-pokemon input {
+  outline: none;
+  border: none;
+  width: 250px;
+  height: 30px;
+  font-size: 1.2rem;
+  padding: 0 1px;
+  gap: 20px;
+}
+
+.header-container-list .search-box-pokemon button {
+  height: 30px;
+}
+
+.poke-container {
+  width: 90%;
+  margin: auto;
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 800px;
+}
+
+.poke-list {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  overflow-y: auto;
+  background-image: url("https://pbs.twimg.com/media/FdvGczlXEAA2k3d?format=jpg&name=large");
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.btn-group {
+  display: flex;
+}
+
+.btn-group button {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: #41403d;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.poke-info-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  width: 700px;
+  height: 400px;
+  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  z-index: 2;
+}
+
+.poke-info-popup button {
+  width: 70px;
+  font-size: 18px;
+  border-radius: 10px;
+  background-color: blue;
+}
+
+.popup {
+  width: 250px;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+@media screen and (max-width: 600px) {
+  .header-container-list {
     width: 100%;
-    padding-top: 50px;
-    height: 150px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #41403d;
-    color: white;
-    z-index: 1;
-  }
-
-  .header-container .header-name{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    font-family: "Paytone One", sans-serif;
-  }
-
-  .header-container .header-name h1{
-    color: rgb(255, 183, 0);
-    font-size: 50px;
-  }
-
-  .header-container .header-name img{
-    width: 150px;
-  }
-  
-  .header-container .search-box-pokemon input {
-    outline: none;
-    border: none;
-    width: 250px;
-    height: 30px;
-    font-size: 1.2rem;
-    padding: 0 1px;
-    gap: 20px;
-  }
-  
-  .header-container .search-box-pokemon button {
-    height: 30px;
-  }
-
-  .poke-container{
-    width: 90%;
-    margin: auto;
-    padding-top: 50px;
+    padding-top: 30px;
+    height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+  }
+
+  .header-container-list .header-name h1 {
+    font-size: 30px;
+  }
+
+  .header-container-list .header-name img {
+    width: 120px;
+  }
+
+  .header-container-list .search-box-pokemon input {
+    width: 200px;
+  }
+
+  .poke-container {
+    padding-top: 30px;
     height: 800px;
   }
 
-  .poke-list{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    overflow-y: auto;
-    background-image: url("https://pbs.twimg.com/media/FdvGczlXEAA2k3d?format=jpg&name=large");
-    padding: 20px;
-    border-radius: 10px;
-
-  }
-
-  .btn-group{
-    display: flex;
-
-  }
-
-  .btn-group button{
-    padding: 10px;
-    margin: 10px;
-    border-radius: 10px;
-    background-color: #41403d;
-    color: white;
-    border: none;
-    cursor: pointer;
+  .poke-list {
+    gap: 10px;
   }
 
   .poke-info-popup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 20px;
-    width: 700px;
+    width: 350px;
     height: 400px;
-    background-color: aqua;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 20px;
-    z-index: 2; 
   }
 
-  .poke-info-popup img{
-    width: 170px;
+  .poke-info-popup button {
+    width: 60px;
+    font-size: 15px;
+    border-radius: 8px;
   }
 
-  .poke-info-popup button{
-    width: 70px;
-    font-size: 18px;
-    border-radius: 10px;
-    background-color: blue;
-  }
-  
   .popup {
     width: 250px;
     position: fixed;
@@ -133,5 +186,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     z-index: 2;
   }
+}
 
-  
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+}

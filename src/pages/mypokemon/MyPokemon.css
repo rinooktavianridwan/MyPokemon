@@ -1,16 +1,75 @@
-.mypoke-container{
-    width: 90%;
-    margin: auto;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 600px;
+.header-container {
+  width: 100%;
+  padding-top: 50px;
+  height: 150px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #41403d;
+  color: white;
+  z-index: 1;
 }
 
-.mypoke-list{
+.header-container .header-name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: "Paytone One", sans-serif;
+}
+
+.header-container .header-name h1 {
+  color: rgb(255, 183, 0);
+  font-size: 50px;
+}
+
+.header-container .header-name img {
+  width: 150px;
+}
+
+.mypoke-container {
+  width: 90%;
+  margin: auto;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+}
+
+.mypoke-list {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  overflow-y: auto;
+  background-image: url("https://pbs.twimg.com/media/FdvGczlXEAA2k3d?format=jpg&name=large");
+  padding: 20px;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .header-container {
+    height: 140px;
+  }
+
+  .header-container .header-name h1 {
+    font-size: 35px;
+  }
+
+  .header-container .header-name img {
+    width: 130px;
+  }
+
+  .mypoke-container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .mypoke-list {
     height: 100%;
     width: 100%;
     display: flex;
@@ -21,4 +80,8 @@
     background-image: url("https://pbs.twimg.com/media/FdvGczlXEAA2k3d?format=jpg&name=large");
     padding: 20px;
     border-radius: 10px;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1024px) {
 }

@@ -1,48 +1,120 @@
-.detail{
-    width: 100%;
-    height: 100%;
-    padding: 20px;
-    display: flex;
+.detail {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
 }
 
-.detail .rigth{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 250px;
-
+.detail .rigth {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 250px;
 }
-.detail .rigth .rigth-scroll{
+.detail .rigth .rigth-scroll {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  gap: 10px;
+  align-items: center;
+  overflow-y: auto;
+}
+
+.detail .left img {
+  width: 200px;
+  max-height: 250px;
+}
+.detail .left {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.info-name {
+  padding: 5px;
+  background-color: blue;
+  width: 80%;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.abilities {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.abilities .group {
+  background-color: blue;
+  color: white;
+  padding: 0.5rem;
+  font-size: 12px;
+  border-radius: 8px;
+}
+
+.base-state {
+  width: 60%;
+  align-items: center;
+  justify-content: center;
+}
+
+.poke-stats {
+  display: flex;
+  flex-direction: column;
+}
+
+.poke-stat {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 600px) {
+  .detail {
+    padding: 10px;
     display: flex;
     flex-direction: column;
-    width: 100%;
-    text-align: center;
+    justify-content: center;
     gap: 10px;
-    align-items: center;
-    overflow-y: auto;
-}
+  }
 
-.detail .left img{
-    width: 200px;
-    max-height: 250px;
+  .detail .rigth {
+    height: 175px;
+  }
 
-}
-.detail .left{
-    width: 60%;
+  .detail .rigth h2{
+    font-size: 18px;
+  }
+
+  .detail .rigth h3{
+    font-size: 15px;
+  }
+
+  .detail .left img {
+    width: 100px;
+    max-height: 100px;
+  }
+  .detail .left {
+    width: 100%;
     display: flex;
     justify-content: center;
     height: 100%;
-}
+  }
 
-.info-name{
+  .info-name {
     padding: 5px;
     background-color: blue;
     width: 80%;
     border-radius: 20px;
     text-align: center;
-}
+  }
 
-.abilities{
+  .abilities {
     width: 90%;
     display: flex;
     flex-wrap: wrap;
@@ -50,30 +122,32 @@
     align-items: center;
     gap: 10px;
     text-align: center;
-}
+  }
 
-.abilities .group{
+  .abilities .group {
     background-color: blue;
     color: white;
     padding: 0.5rem;
     font-size: 12px;
     border-radius: 8px;
+  }
 
-}
-
-.base-state{
+  .base-state {
     width: 60%;
     align-items: center;
     justify-content: center;
-}
+  }
 
-.poke-stats {
+  .poke-stats {
     display: flex;
     flex-direction: column;
   }
-  
+
   .poke-stat {
     display: flex;
     justify-content: space-between;
   }
-  
+}
+
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+}
