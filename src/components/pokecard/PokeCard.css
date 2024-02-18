@@ -1,7 +1,7 @@
 .card {
   width: 200px;
   height: 250px;
-  background-color: blue;
+  background-color: #2a75bb;
   border-radius: 1rem;
   box-shadow: 0 5px 5px rgb(o, 0, 0, 0.5);
   padding: 10px 1.5rem;
@@ -44,4 +44,13 @@
 }
 
 @media screen and (min-width: 600px) and (max-width: 1024px) {
+  .card {
+    width: 180px;
+    height: 230px;
+  }
+
+  .card img {
+    width: 130px;
+    max-height: 150px;
+  }
 }

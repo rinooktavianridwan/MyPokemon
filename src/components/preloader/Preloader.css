@@ -1,77 +1,154 @@
-.preloader{
-    height: 100vh;
-    width: 100%;
-    color: white;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    background-image: url("https://pbs.twimg.com/media/FdvGczlXEAA2k3d?format=jpg&name=large");
-
+.preloader {
+  height: 100vh;
+  width: 100%;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-image: url("https://pbs.twimg.com/media/FdvGczlXEAA2k3d?format=jpg&name=large");
 }
 
-.preloader .animation-container{
+.preloader .animation-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  width: 850px;
+  overflow: hidden;
+  color: white;
+  justify-items: center;
+}
+
+.animation-container .logo {
+  width: 375px;
+}
+
+.animation-container .ball_rigth {
+  width: 125px;
+}
+
+.animation-container .ball_left {
+  width: 125px;
+}
+
+.toprigth {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 125px;
+  height: 125px;
+}
+
+.topleft {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 125px;
+  height: 125px;
+}
+
+.bottomleft {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 125px;
+  height: 125px;
+}
+
+.bottomrigth {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 125px;
+  height: 125px;
+}
+
+@media screen and (max-width: 600px) {
+  .preloader .animation-container {
+    height: 200px;
+    width: 400px;
+  }
+
+  .animation-container .logo {
+    width: 150px;
+  }
+
+  .animation-container .ball_rigth {
+    width: 70px;
+  }
+
+  .animation-container .ball_left {
+    width: 70px;
+  }
+
+  .toprigth {
+    width: 90px;
+    height: 90px;
+  }
+
+  .topleft {
+    width: 90px;
+    height: 90px;
+  }
+
+  .bottomleft {
+    width: 90px;
+    height: 90px;
+  }
+
+  .bottomrigth {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+  .preloader .animation-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 300px;
-    width: 850px;
-    font-size: 20px;
-    font-weight: 800;
+    height: 250px;
+    width: 700px;
     overflow: hidden;
     color: white;
     justify-items: center;
-    
+  }
+
+  .animation-container .logo {
+    width: 275px;
+  }
+
+  .animation-container .ball_rigth {
+    width: 100px;
+  }
+
+  .animation-container .ball_left {
+    width: 100px;
+  }
+
+  .toprigth {
+    width: 110px;
+    height: 110px;
+  }
+
+  .topleft {
+    width: 110px;
+    height: 110px;
+  }
+
+  .bottomleft {
+    width: 110px;
+    height: 110px;
+  }
+
+  .bottomrigth {
+    width: 110px;
+    height: 110px;
+  }
 }
-
-.animation-container .logo{
-    width: 375px;
-    
-}
-
-.animation-container .ball_rigth{
-    width: 125px;
-}
-
-.animation-container .ball_left{
-    width: 125px;
-}
-
-
-.toprigth{
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 125px;
-    height: 125px;
-}
-
-.topleft{
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 125px;
-    height: 125px;
-}
-
-.bottomleft{
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    width: 125px;
-    height: 125px;
-}
-
-.bottomrigth{
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    width: 125px;
-    height: 125px;
-}
-

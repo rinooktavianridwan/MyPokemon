@@ -18,7 +18,7 @@
 }
 
 .header-container .header-name h1 {
-  color: rgb(255, 183, 0);
+  color: #ffcb05;
   font-size: 50px;
 }
 
@@ -69,19 +69,20 @@
     padding-bottom: 20px;
   }
 
-  .mypoke-list {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    overflow-y: auto;
-    background-image: url("https://pbs.twimg.com/media/FdvGczlXEAA2k3d?format=jpg&name=large");
-    padding: 20px;
-    border-radius: 10px;
-  }
 }
 
 @media screen and (min-width: 600px) and (max-width: 1024px) {
+
+  .header-container .header-name h1 {
+    font-size: 40px;
+  }
+
+  .header-container .header-name img {
+    width: 140px;
+  }
+
+  .mypoke-container {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
 }

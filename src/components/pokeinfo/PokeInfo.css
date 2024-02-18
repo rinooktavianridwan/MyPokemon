@@ -34,10 +34,11 @@
 
 .info-name {
   padding: 5px;
-  background-color: blue;
+  background-color: #2a75bb;
   width: 80%;
   border-radius: 20px;
   text-align: center;
+  color: #ffcb05;
 }
 
 .abilities {
@@ -51,8 +52,8 @@
 }
 
 .abilities .group {
-  background-color: blue;
-  color: white;
+  background-color: #2a75bb;
+  color: #ffcb05;
   padding: 0.5rem;
   font-size: 12px;
   border-radius: 8px;
@@ -104,48 +105,6 @@
     display: flex;
     justify-content: center;
     height: 100%;
-  }
-
-  .info-name {
-    padding: 5px;
-    background-color: blue;
-    width: 80%;
-    border-radius: 20px;
-    text-align: center;
-  }
-
-  .abilities {
-    width: 90%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    text-align: center;
-  }
-
-  .abilities .group {
-    background-color: blue;
-    color: white;
-    padding: 0.5rem;
-    font-size: 12px;
-    border-radius: 8px;
-  }
-
-  .base-state {
-    width: 60%;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .poke-stats {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .poke-stat {
-    display: flex;
-    justify-content: space-between;
   }
 }
 

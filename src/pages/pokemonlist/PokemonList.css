@@ -28,7 +28,7 @@ body {
 }
 
 .header-container-list .header-name h1 {
-  color: rgb(255, 183, 0);
+  color: #ffcb05;
   font-size: 50px;
 }
 
@@ -108,7 +108,8 @@ body {
   width: 70px;
   font-size: 18px;
   border-radius: 10px;
-  background-color: blue;
+  background-color: #2a75bb;
+  color: #ffcb05;
 }
 
 .popup {
@@ -126,6 +127,7 @@ body {
   border: 1px solid #ccc;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   z-index: 2;
+  gap: 20px;
 }
 
 @media screen and (max-width: 600px) {
@@ -133,7 +135,6 @@ body {
     width: 100%;
     padding-top: 30px;
     height: 200px;
-    display: flex;
     flex-direction: column;
     justify-content: center;
   }
@@ -171,22 +172,42 @@ body {
   }
 
   .popup {
-    width: 250px;
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 20px;
-    border: 1px solid #ccc;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    z-index: 2;
+    width: 200px;
+    padding: 10px;
+    font-size: 14px;
+    gap: 8px;
   }
 }
 
 @media screen and (min-width: 600px) and (max-width: 1024px) {
+  .header-container-list {
+    width: 100%;
+    padding-top: 30px;
+    height: 200px;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .header-container-list .header-name h1 {
+    font-size: 40px;
+  }
+
+  .header-container-list .header-name img {
+    width: 130px;
+  }
+
+  .poke-container {
+    padding-top: 30px;
+    height: 800px;
+  }
+
+  .poke-info-popup {
+    width: 550px;
+    height: 450px;
+  }
+
+  .popup {
+    padding: 15px;
+    gap: 10px;
+  }
 }

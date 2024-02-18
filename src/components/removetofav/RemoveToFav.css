@@ -3,9 +3,11 @@
     bottom: 20px;
     right: 20px;
     padding: 0.5rem;
-    background-color: blue;
+    background-color: #2a75bb;
     font-size: 1rem;
     font-weight: bold;
+    border-radius: 10px;
+    color: #ffcb05;
   }
   .mylist:hover{
     cursor: pointer;
@@ -14,8 +16,9 @@
   
   @media screen and (max-width: 600px) {
     .mylist {
-      bottom: 5px;
-      right: 5px;
+      bottom: 10px;
+      right: 10px;
+      border-radius: 5px;
     }
   }
   
@@ -23,6 +26,7 @@
     .mylist {
       bottom: 10px;
       right: 10px;
+      border-radius: 8px;
     }
   }
   

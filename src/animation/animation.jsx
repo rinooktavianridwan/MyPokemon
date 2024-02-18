@@ -72,7 +72,7 @@ export const preLoaderAnim = () => {
       ease: "power3.inOut",
     })
     .to(
-      ".preloader",
+      [".preloader", ".toprigth", ".topleft", ".bottomrigth", ".bottomleft"],
       {
         duration: 1,
         height: "0vh",
