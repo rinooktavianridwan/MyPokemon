@@ -76,6 +76,9 @@
 }
 
 @media screen and (max-width: 600px) {
+  .info-name{
+    font-size: 25px;
+  }
   .detail {
     padding: 10px;
     display: flex;

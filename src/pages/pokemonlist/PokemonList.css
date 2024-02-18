@@ -161,11 +161,14 @@ body {
   }
 
   .poke-info-popup {
-    width: 350px;
+    width: 300px;
     height: 400px;
   }
 
   .poke-info-popup button {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
     width: 60px;
     font-size: 15px;
     border-radius: 8px;

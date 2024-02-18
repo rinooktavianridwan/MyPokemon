@@ -88,21 +88,29 @@
   }
 
   .toprigth {
+    top: 60px;
+    right: 10px;
     width: 90px;
     height: 90px;
   }
 
   .topleft {
+    top: 60px;
+    left: 10px;
     width: 90px;
     height: 90px;
   }
 
   .bottomleft {
+    bottom: 40px;
+    left: 10px;
     width: 90px;
     height: 90px;
   }
 
   .bottomrigth {
+    bottom: 40px;
+    right: 10px;
     width: 90px;
     height: 90px;
   }

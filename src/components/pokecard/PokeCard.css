@@ -29,17 +29,17 @@
 
 @media screen and (max-width: 600px) {
   .card {
-    width: 150px;
-    height: 200px;
+    width: 130px;
+    height: 180px;
   }
 
   .card img {
-    width: 100px;
-    max-height: 120px;
+    width: 90px;
+    max-height: 110px;
   }
 
   .card h2 {
-    font-size: 15px;
+    font-size: 13px;
   }
 }
 
