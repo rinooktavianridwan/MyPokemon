@@ -20,6 +20,7 @@ export const preLoaderAnim = () => {
     .add("startAnimation")
     .from(".animation-container .logo", {
       duration: 2,
+      delay : 1,
       y: 400,
       skewY: 30,
       stagger: 0.4,
@@ -28,6 +29,7 @@ export const preLoaderAnim = () => {
 
     .from(".animation-container .ball_rigth", {
       duration: 2,
+      delay : 1,
       x: 400, 
       rotate: 360, 
       ease: "Power3.easeOut",
@@ -35,6 +37,7 @@ export const preLoaderAnim = () => {
     
     .from(".animation-container .ball_left", {
       duration: 2,
+      delay : 1,
       x: -400, 
       rotate: -360, 
       ease: "Power3.easeOut",

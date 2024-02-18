@@ -22,26 +22,31 @@ const Home = () => {
         <img src="/pokemon_ball.svg" alt="My List" className="icon-home" />
         <p className="des-home">
           Selamat datang di situs kami yang menyediakan pengalaman terbaik dalam
-          mencari dan menyimpan informasi tentang anime dan film favorit Anda.
-          Temukan judul yang Anda cari dan kelola daftar personal Anda dengan
-          mudah.
+          mencari dan menyimpan informasi tentang Pokemon. Temukan Pokemon yang
+          Anda cari dan kelola daftar Pokemon favorit Anda dengan mudah.
         </p>
       </div>
       <div className="website-home">
+        <div className="header-name">
+          <h1>My</h1>
+          <img src={pokemon} alt="Pokemon" />
+          <h1>Book</h1>
+        </div>
         <p className="des-home">
-          Di MyMovieList, Anda dapat menemukan informasi tentang berbagai film
-          dari beberapa genre. Jelajahi sinopsis, temukan rating untuk membantu
-          Anda membuat keputusan tentang film yang ingin Anda saksikan.
-          <Link to="/PokemonList">Ke Halaman</Link>
+          Di MyPokemonBook, Anda dapat menemukan informasi tentang berbagai
+          Pokemon. Gunakan fitur pencarian kami untuk menemukan Pokemon favorit
+          Anda. <Link to="/PokemonList">Ke Halaman</Link>
         </p>
-        <h1>MyMovieList</h1>
       </div>
       <div className="website-home">
-        <h1>MyAnimeList</h1>
+        <div className="header-name">
+          <h1>My</h1>
+          <img src={pokemon} alt="Pokemon" />
+          <h1>List</h1>
+        </div>
         <p className="des-home">
-          MyAnimeList adalah tempat di mana Anda dapat menelusuri katalog anime
-          yang luas, membaca ringkasan cerita. Gunakan fitur pencarian kami
-          untuk menemukan anime favorit Anda.<Link to="/Anime">Ke Halaman</Link>
+          MyPokemonList adalah tempat di mana Anda dapat menyimpan data Pokemon
+          favorit anda dengan mudah. <Link to="/MyPokemon">Ke Halaman</Link>
         </p>
       </div>
     </div>

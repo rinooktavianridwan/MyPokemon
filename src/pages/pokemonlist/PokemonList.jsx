@@ -27,12 +27,14 @@ const PokemonList = () => {
     setNextUrl(res.data.next);
     setPrevUrl(res.data.previous);
     getPokemon(res.data.results);
+
     setLoading(false);
   };
 
   const getPokemon = async (res) => {
     const pokemonPromises = res.map(async (item) => {
       const result = await axios.get(item.url);
+      console.log(result.data);
       return result.data;
     });
 
@@ -113,7 +115,7 @@ const PokemonList = () => {
         <div className="header-name">
           <h1>My</h1>
           <img src={pokemon} alt="Pokemon" />
-          <h1>List</h1>
+          <h1>Book</h1>
         </div>
         <div className="search-box-pokemon">
           <input
@@ -136,32 +138,30 @@ const PokemonList = () => {
             }}
           />
         </div>
-        {
-          !searchResult &&(
-            <div className="btn-group">
-              {prevUrl && (
-                <button
-                  onClick={() => {
-                    setPokeData([]);
-                    setUrl(prevUrl);
-                  }}
-                >
-                  Previous
-                </button>
-              )}
-              {nextUrl && (
-                <button
-                  onClick={() => {
-                    setPokeData([]);
-                    setUrl(nextUrl);
-                  }}
-                >
-                  Next
-                </button>
-              )}
-            </div>
-          )
-        }
+        {!searchResult && (
+          <div className="btn-group">
+            {prevUrl && (
+              <button
+                onClick={() => {
+                  setPokeData([]);
+                  setUrl(prevUrl);
+                }}
+              >
+                Previous
+              </button>
+            )}
+            {nextUrl && (
+              <button
+                onClick={() => {
+                  setPokeData([]);
+                  setUrl(nextUrl);
+                }}
+              >
+                Next
+              </button>
+            )}
+          </div>
+        )}
         {isInfoVisible && (
           <div className="poke-info-popup">
             <PokeInfo data={pokeDex} />

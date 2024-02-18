@@ -4,7 +4,7 @@ export const listNavbar = [
     path: "/",
   },
   {
-    nama: "Pokemon List",
+    nama: "Pokemon Book",
     path: "/PokemonList",
   },
   {
