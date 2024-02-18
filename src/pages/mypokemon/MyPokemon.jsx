@@ -43,20 +43,24 @@ const MyPokemon = () => {
         </div>
       </div>
       <div className="mypoke-container">
-        <PokeCard
-          pokemon={myPokemon}
-          infoPokemon={(poke) => {
-            setPokeDex(poke);
-            showInfo();
-          }}
-        />
+        <div className="mypoke-list">
+          <PokeCard
+            pokemon={myPokemon}
+            infoPokemon={(poke) => {
+              setPokeDex(poke);
+              showInfo();
+            }}
+          />
+        </div>
       </div>
       {isInfoVisible && (
         <div className="poke-info-popup">
           <PokeInfo data={pokeDex} />
           <button onClick={hideInfo}>Close</button>
-          <RemoveToFav handleRemoveToList={() => removeFromList(pokeDex)} 
-          close = {hideInfo}/>
+          <RemoveToFav
+            handleRemoveToList={() => removeFromList(pokeDex)}
+            close={hideInfo}
+          />
         </div>
       )}
     </>

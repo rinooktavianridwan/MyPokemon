@@ -68,10 +68,10 @@ const PokemonList = () => {
       pokeFun();
       return;
     }
-  
+
     try {
       setLoading(true);
-      setErrorMessage(""); 
+      setErrorMessage("");
       const res = await axios.get(
         `https://pokeapi.co/api/v2/pokemon/${searchQuery.toLowerCase()}`
       );
@@ -92,7 +92,6 @@ const PokemonList = () => {
       setLoading(false);
     }
   };
-  
 
   const closeNotFoundPopup = () => {
     setShowNotFoundPopup(false);
@@ -137,28 +136,32 @@ const PokemonList = () => {
             }}
           />
         </div>
-        <div className="btn-group">
-          {prevUrl && (
-            <button
-              onClick={() => {
-                setPokeData([]);
-                setUrl(prevUrl);
-              }}
-            >
-              Previous
-            </button>
-          )}
-          {nextUrl && (
-            <button
-              onClick={() => {
-                setPokeData([]);
-                setUrl(nextUrl);
-              }}
-            >
-              Next
-            </button>
-          )}
-        </div>
+        {
+          !searchResult &&(
+            <div className="btn-group">
+              {prevUrl && (
+                <button
+                  onClick={() => {
+                    setPokeData([]);
+                    setUrl(prevUrl);
+                  }}
+                >
+                  Previous
+                </button>
+              )}
+              {nextUrl && (
+                <button
+                  onClick={() => {
+                    setPokeData([]);
+                    setUrl(nextUrl);
+                  }}
+                >
+                  Next
+                </button>
+              )}
+            </div>
+          )
+        }
         {isInfoVisible && (
           <div className="poke-info-popup">
             <PokeInfo data={pokeDex} />

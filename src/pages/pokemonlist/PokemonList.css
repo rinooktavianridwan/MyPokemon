@@ -56,15 +56,19 @@
     padding-top: 50px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    height: 800px;
   }
 
   .poke-list{
+    height: 100%;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    
+    justify-content: center;
+    overflow-y: auto;
 
   }
 

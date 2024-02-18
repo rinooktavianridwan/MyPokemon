@@ -5,11 +5,13 @@ import Footer from './components/footer/Footer'
 import Home from './pages/home/Home'
 import MyPokemon from './pages/mypokemon/MyPokemon'
 import PokemonList from './pages/pokemonlist/PokemonList'
+import Preloader from './components/preloader/Preloader'
 
 function App() {
 
   return (
     <div>
+      <Preloader />
       <Navbar />
       <Routes>
         <Route path="/" Component={Home} />

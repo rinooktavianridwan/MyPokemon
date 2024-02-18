@@ -1,9 +1,21 @@
 .mypoke-container{
+    width: 90%;
+    margin: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+}
+
+.mypoke-list{
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
-    width: 90%;
-    margin: 0 auto;
     gap: 20px;
-    padding: 20px;
     justify-content: center;
+    overflow-y: auto;
 }
