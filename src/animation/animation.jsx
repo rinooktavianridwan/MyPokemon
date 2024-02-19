@@ -67,7 +67,7 @@ export const preLoaderAnim = () => {
     },"endtAnimation")
     
     .to("body", {
-      duration: -5,
+      duration: 0.05,
       css: { overflowY: "scroll" },
       ease: "power3.inOut",
     })

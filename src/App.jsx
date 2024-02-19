@@ -7,17 +7,15 @@ import PokemonList from "./pages/pokemonlist/PokemonList";
 import Preloader from "./components/preloader/Preloader";
 
 function App() {
-  const isWideScreen = window.innerWidth >= 1024;
-
   return (
     <div>
+      <Preloader />
       <Navbar />
       <Routes>
         <Route path="/" Component={Home} />
         <Route path="/PokemonList" Component={PokemonList} />
         <Route path="/MyPokemon" Component={MyPokemon} />
       </Routes>
-      {isWideScreen && <Preloader />}
       <Footer />
     </div>
   );
