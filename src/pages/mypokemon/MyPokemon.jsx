@@ -24,6 +24,7 @@ const MyPokemon = () => {
     if (storedPokemon) {
       setMyPokemon(JSON.parse(storedPokemon));
     }
+    window.scrollTo(0, 0);
   }, []);
 
   const showInfo = () => {

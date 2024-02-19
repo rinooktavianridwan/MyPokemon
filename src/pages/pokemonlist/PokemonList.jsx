@@ -15,11 +15,10 @@ const PokemonList = () => {
   const [pokeDex, setPokeDex] = useState();
   const [myPokemon, setMyPokemon] = useState([]);
   const [isInfoVisible, setIsInfoVisible] = useState(false);
-  const [showPopup, setShowPopup] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResult, setSearchResult] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
-  const [showNotFoundPopup, setShowNotFoundPopup] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
 
   const pokeFun = async () => {
     setLoading(true);
@@ -27,7 +26,6 @@ const PokemonList = () => {
     setNextUrl(res.data.next);
     setPrevUrl(res.data.previous);
     getPokemon(res.data.results);
-
     setLoading(false);
   };
 
@@ -56,6 +54,7 @@ const PokemonList = () => {
       const newArrayPokemon = [...myPokemon, pokemon];
       setMyPokemon(newArrayPokemon);
       localStorage.setItem("myPokemon", JSON.stringify(newArrayPokemon));
+      setErrorMessage("Successfully added to the Favorite in My Pokemon Page");
       setShowPopup(true);
     }
   };
@@ -87,7 +86,7 @@ const PokemonList = () => {
     } catch (error) {
       if (error.response && error.response.status === 404) {
         setErrorMessage("Pokemon tidak ditemukan");
-        setShowNotFoundPopup(true);
+        setShowPopup(true);
       } else {
         setErrorMessage("Terjadi kesalahan saat mencari Pokemon");
       }
@@ -95,15 +94,12 @@ const PokemonList = () => {
     }
   };
 
-  const closeNotFoundPopup = () => {
-    setShowNotFoundPopup(false);
-  };
-
   useEffect(() => {
     const storedPokemon = localStorage.getItem("myPokemon");
     if (storedPokemon) {
       setMyPokemon(JSON.parse(storedPokemon));
     }
+    window.scrollTo(0, 0);
   }, []);
 
   useEffect(() => {
@@ -171,14 +167,8 @@ const PokemonList = () => {
         )}
         {showPopup && (
           <div className="popup">
-            <p>Successfully added to the Favorite in My Pokemon Page</p>
-            <button onClick={closePopup}>Close</button>
-          </div>
-        )}
-        {showNotFoundPopup && (
-          <div className="popup">
             <p>{errorMessage}</p>
-            <button onClick={closeNotFoundPopup}>Tutup</button>
+            <button onClick={closePopup}>Tutup</button>
           </div>
         )}
       </div>
